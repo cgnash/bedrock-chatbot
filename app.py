@@ -1,4 +1,3 @@
-
 import boto3
 import streamlit as st
 import json
@@ -63,4 +62,5 @@ if prompt := st.chat_input("What would you like to know?"):
             st.session_state.messages.append({"role": "assistant", "content": answer})
             
         except Exception as e:
+
             message_placeholder.error(f"Error: {str(e)}")
