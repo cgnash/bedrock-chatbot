@@ -3,7 +3,7 @@ import streamlit as st
 import json
 import uuid
 
-# Initialize Bedrock client
+# Initialize Bedrock clients
 bedrock_runtime = boto3.client('bedrock-runtime', region_name ='us-east-1')
 bedrock_agent_runtime = boto3.client('bedrock-agent-runtime', region_name='us-east-1')
 
@@ -64,3 +64,4 @@ if prompt := st.chat_input("What would you like to know?"):
         except Exception as e:
 
             message_placeholder.error(f"Error: {str(e)}")
+
