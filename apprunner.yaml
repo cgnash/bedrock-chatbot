@@ -4,8 +4,11 @@ build:
   commands:
     build:
       - pip3 install -r requirements.txt
+      - pip3 list  # Debug: show what's installed
 run:
   runtime-version: 3.11
+  pre-run:
+    - pip3 install -r requirements.txt  # Install again in pre-run for Python 3.11
   command: python3 -m streamlit run app.py --server.port 8080 --server.address 0.0.0.0 --server.headless true
   network:
     port: 8080
