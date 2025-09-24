@@ -3,13 +3,12 @@ runtime: python311
 build:
   commands:
     build:
-      - pip3 install -r requirements.txt
-      - pip3 list  # Debug: show what's installed
+      - echo "Build completed"
 run:
   runtime-version: 3.11
   pre-run:
-    - pip3 install -r requirements.txt  # Install again in pre-run for Python 3.11
-  command: python3 -m streamlit run app.py --server.port 8080 --server.address 0.0.0.0 --server.headless true
+    - pip3 install -r requirements.txt
+  command: python3 -m streamlit run app.py --server.port 8080 --server.address 0.0.0.0 --server.headless true --server.enableCORS false --server.enableXsrfProtection false
   network:
     port: 8080
   env:
